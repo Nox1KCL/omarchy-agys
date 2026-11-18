@@ -31,12 +31,7 @@ This plugin queries sessions, presence locks, Trash, and cached quotas through t
    go install github.com/Nox1KCL/Agys/cmd/agys@latest
    ```
 
-3. **Build from source**:
-   ```bash
-   git clone https://github.com/Nox1KCL/Agys.git
-   cd Agys
-   make build
-   ```
+Source build instructions are available in the [Agys repository](https://github.com/Nox1KCL/Agys).
 
 ### Step 2 — Add the plugin to Omarchy
 
