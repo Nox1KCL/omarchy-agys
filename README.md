@@ -16,17 +16,27 @@ Compact native [Omarchy](https://omarchy.org/) shell bar plugin for **Google Ant
 
 ### Step 1 — Install the `agys` CLI backend
 
-This plugin queries sessions, presence locks, Trash, and cached quotas through the [`agys`](https://github.com/Nox1KCL/Agys) binary (`>= v0.1.0` with `--plugin-state` support). Install it via any of the options below:
+This plugin queries sessions, presence locks, Trash, and cached quotas through the [`agys`](https://github.com/Nox1KCL/Agys) binary (`>= v0.1.0` with `--plugin-state` support). Install it using any method below:
 
-```bash
-# Option A: installer script (no sudo; installs to ~/.local/bin/agys)
-curl -fsSL https://raw.githubusercontent.com/Nox1KCL/Agys/main/install.sh | bash
+1. **Direct release binary** — download `agys-linux-amd64` (or `agys-linux-arm64`) and `checksums.txt` from [Agys Releases](https://github.com/Nox1KCL/Agys/releases/latest), verify the checksum, and place the binary in `~/.local/bin/agys`:
+   ```bash
+   sha256sum -c checksums.txt --ignore-missing
+   chmod +x agys-linux-amd64
+   mkdir -p ~/.local/bin
+   mv agys-linux-amd64 ~/.local/bin/agys
+   ```
 
-# Option B: Go toolchain
-go install github.com/Nox1KCL/Agys/cmd/agys@latest
-```
+2. **Go toolchain**:
+   ```bash
+   go install github.com/Nox1KCL/Agys/cmd/agys@latest
+   ```
 
-Or download `agys-linux-amd64` / `agys-linux-arm64` directly from [Agys Releases](https://github.com/Nox1KCL/Agys/releases/latest) and place it in `~/.local/bin/agys`.
+3. **Build from source**:
+   ```bash
+   git clone https://github.com/Nox1KCL/Agys.git
+   cd Agys
+   make build
+   ```
 
 ### Step 2 — Add the plugin to Omarchy
 
