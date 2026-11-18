@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "id": "nox.agys",
+  "name": "Agys",
+  "version": "1.0.0",
+  "author": "Nox1KCL",
+  "license": "MIT",
+  "description": "Compact Antigravity session browser (pinned, recent, archive, trash) with pagination and live quota limits powered by Agys.",
+  "kinds": ["bar-widget"],
+  "activation": "on-demand",
+  "entryPoints": {
+    "barWidget": "Panel.qml"
+  },
+  "barWidget": {
+    "displayName": "Agys",
+    "description": "Compact session viewer & launcher (pinned, recent, archive, trash) plus Quota Limits backed by Agys.",
+    "category": "AI",
+    "defaultSection": "right",
+    "allowMultiple": false,
+    "defaults": {
+      "refreshIntervalSec": 60,
+      "pageSize": 5,
+      "showBadge": true,
+      "enableQuotaAlerts": true,
+      "quotaAlertThreshold": 15,
+      "terminalCommand": ""
+    },
+    "schema": [
+      {
+        "key": "refreshIntervalSec",
+        "type": "integer",
+        "label": "Refresh interval (seconds)",
+        "min": 10,
+        "max": 1800,
+        "step": 10,
+        "defaultValue": 60
+      },
+      {
+        "key": "pageSize",
+        "type": "integer",
+        "label": "Sessions per page",
+        "min": 3,
+        "max": 10,
+        "step": 1,
+        "defaultValue": 5
+      },
+      {
+        "key": "showBadge",
+        "type": "boolean",
+        "label": "Show active count in bar",
+        "defaultValue": true
+      },
+      {
+        "key": "enableQuotaAlerts",
+        "type": "boolean",
+        "label": "Low quota desktop alerts",
+        "defaultValue": true
+      },
+      {
+        "key": "quotaAlertThreshold",
+        "type": "integer",
+        "label": "Low quota alert threshold (%)",
+        "min": 5,
+        "max": 50,
+        "step": 5,
+        "defaultValue": 15
+      },
+      {
+        "key": "terminalCommand",
+        "type": "string",
+        "label": "Custom terminal command",
+        "placeholder": "Leave empty for xdg-terminal-exec",
+        "defaultValue": ""
+      }
+    ]
+  }
+}
